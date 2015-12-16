@@ -1,15 +1,18 @@
 "use strict";
 
 var fs = require("fs");
-var Paths = require('../paths');
 var mongoose = require('mongoose');
 var Courses = require('../models/courses.js');
 var ImportScript = require('./importScript.js');
+var Paths = require('../jsonpaths');
 
 class CoursesImportScript extends ImportScript {
 
     constructor() {
       super();
+      this.mongourl = 'mongodb://localhost:27017/ubcio';
+      mongoose.connect(this.mongourl);
+      this.filepath = Paths.coursesPath;
       this.coursesImportScript(this.filepath);
     }
 
