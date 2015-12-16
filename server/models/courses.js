@@ -9,7 +9,8 @@ var coursesSchema = new Schema({
   credits: String,
   prerequisites: String,
   corequisite: String,
-  tips: [{tip: String, createDate: String}]
+  tips: [{tip: String, createDate: String}],
+  reviews: [{review: String, createDate: String, professor: String}]
 
 });
 

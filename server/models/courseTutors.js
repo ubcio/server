@@ -11,4 +11,4 @@ var courseTutorsSchema = new Schema({
 // Create a Companies model for courseTutorsSchema
 var CourseTutors = mongoose.model('courseTutors', courseTutorsSchema);
 // make this available to our users in our Node applications
-module.exports = Tutors;
+module.exports = CourseTutors;
