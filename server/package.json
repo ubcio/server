@@ -15,7 +15,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "babel": "^6.3.13",
+    "babel-register": "^6.3.13",
     "mongodb": "^2.0.52",
     "mongoose": "^4.3.1"
   }
