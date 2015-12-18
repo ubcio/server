@@ -10,8 +10,6 @@ var dataRoutes = require('./routes/dataRoutes');
 
 
 var app = express();
-var mongoURL = process.env.MONGOLAB_URI || config.mongoparams;
-mongoose.connect(mongoURL);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

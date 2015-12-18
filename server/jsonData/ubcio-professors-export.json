@@ -1,0 +1,25 @@
+{
+  "professors" : [ {
+    "courses" : {
+      "All" : [ 0 ],
+      "CPSC 110" : [ 0 ]
+    },
+    "name" : "Ron Garcia",
+    "reviews" : [ {
+      "course" : "CPSC 110",
+      "createDate" : "2015-11-19",
+      "review" : "This was the first serious computer science course I have ever taken - I didn't know what to expect. Ron set up a very friendly casual learning environment, remembered 150+ student names, and was just an all around great teacher. I'd like to leave some constructive criticism but I took the course a few terms ago and I can't remember a single thing I disliked about Ron's teaching. Occasionally parts of the course itself bugged me but it was not all in Ron's control. I would highly recommend to anyone to take a class with Ron"
+    } ]
+  }, {
+    "courses" : {
+      "All" : [ 0 ],
+      "CPSC 213" : [ 0 ]
+    },
+    "name" : "Mike Feeley",
+    "reviews" : [ {
+      "course" : "CPSC 213",
+      "createDate" : "2015-11-22",
+      "review" : "When I took this course with Mike I had some concerns about parts of the course and so I emailed him and let him know. Later he responded telling me that he would like to meet up and talk about it...I was worried he would be angry. Instead, he listened to me through all my complaints and either told me he didn't agree or he would work on fixing it. It was extremely nice having a professor who actually cared about the students opinions on the course. In class, he always would make sure everyone understands a concept before moving on, which I thought was awesome, if you were confused he would just explain it to you until it made sense. I would highly recommend for anyone to take a class with Mike "
+    } ]
+  } ]
+}

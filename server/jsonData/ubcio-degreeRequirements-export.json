@@ -1,0 +1,156 @@
+{
+  "degrees" : [ {
+    "name" : "Computer Science Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5312"
+    } ]
+  }, {
+    "name" : "Computer Science Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5314"
+    } ]
+  }, {
+    "name" : "Computer Science and Another Science Subject Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#9185"
+    } ]
+  }, {
+    "name" : "Computer Science and Biology Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,418#9181"
+    } ]
+  }, {
+    "name" : "Computer Science and Mathematics Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,429#10508"
+    } ]
+  }, {
+    "name" : "Computer Science and Microbiology and Immunology Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,430#9199"
+    } ]
+  }, {
+    "name" : "Computer Science and Physics Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#9958"
+    } ]
+  }, {
+    "name" : "Computer Science and Statistics Combined Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#9183"
+    } ]
+  }, {
+    "name" : "Atmospheric Science and Computer Science Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,416#9187"
+    } ]
+  }, {
+    "name" : "Computer Science and Biology Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,418#10490"
+    } ]
+  }, {
+    "name" : "Computer Science and Mathematics Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5317"
+    } ]
+  }, {
+    "name" : "Computer Science and Microbiology and Immunology Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,430#9198"
+    } ]
+  }, {
+    "name" : "Computer Science and Physics Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5320"
+    } ]
+  }, {
+    "name" : "Computer Science and Statistics Combined Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#9184"
+    } ]
+  }, {
+    "name" : "Computer Science and Software Engineering Major",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5384"
+    } ]
+  }, {
+    "name" : "Computer Science and Software Engineering Honours",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#5385"
+    } ]
+  }, {
+    "name" : "Cognitive Systems Major: Computational Intelligence and Design",
+    "websites" : [ {
+      "buttonName" : "General Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,408#18663"
+    }, {
+      "buttonName" : "Major Requirements",
+      "website" : "http://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,421#14865"
+    } ]
+  } ]
+}

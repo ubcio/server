@@ -21,6 +21,7 @@ class CoursesImportScript extends ImportScript {
       var jsonContent = this.getDataFromJsonFile(filepath);
       var requestedresult = this.readJsonIntoCourses(jsonContent);
       var output = requestedresult.then(function(datas){
+        var counter = 0;
         datas.forEach(function(item, i){
           console.log(i);
           console.log(item);
@@ -31,7 +32,8 @@ class CoursesImportScript extends ImportScript {
               console.log('ERROR: Insertion of Course into DB failed');
             } else { 
               console.log('SUCCESS: COURSE: '+ i + ":" +item['name'] +' successfully entered into the DB.');
-              if (i == (datas.length - 1)) mongoose.connection.close();
+              counter++;
+              if (counter == (datas.length - 1)) mongoose.connection.close();
             };
           });
         })
