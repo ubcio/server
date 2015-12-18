@@ -1,4 +1,4 @@
-require("babel/register");
+require("babel-register");
 var CoursesImportScript = require('./importCourses.js');
 var ProfessorsImportScript = require('./importProfessors.js');
 var DegreeRequirementsImportScript = require('./importDegreeRequirements.js');
