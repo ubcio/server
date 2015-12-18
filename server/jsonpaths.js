@@ -3,7 +3,7 @@ module.exports = {
     careerFairsPath: "",
     professorsPath: "../jsonData/ubcio-professors-export.json",
     companiesPath: "",
-    courseTutorsPath: "../jsonData/ubcio-tutors-export.json",,
+    courseTutorsPath: "../jsonData/ubcio-tutors-export.json",
     degreeRequirementsPath: "../jsonData/ubcio-degreeRequirements-export.json",
     hackathonsPath: "",
     jobPostingsPath: "",
