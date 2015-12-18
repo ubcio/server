@@ -5,10 +5,10 @@
 #### To test out the API, carry out the following steps
 
 1. Clone the repository
-2. '''cd''' into the repository and run ```npm install```
+2. `cd` into the repository and run `npm install`
 3. Start up your MongoDB server. Please note that the default database that the API connects to has been named ubcio. You may need to create this database in mongodb or change the name of the DB in the relevant JS files.
-4. Run '''npm start''' from the server directory to start up the API server.
-5. Visit ''' localhost:3000/data/courses ''' to view data that the API sends out upon receving GET requests to the specified endpoints
+4. Run `npm start` from the server directory to start up the API server.
+5. Visit `localhost:3000/data/courses` to view data that the API sends out upon receving GET requests to the specified endpoints
 
 #### In order to be able to make valid requests to the API, we recommend using Jquery Ajax methods. An example is given below
 
