@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "babel-register": "^6.3.13",
+    "cors": "^2.7.1",
     "mongodb": "^2.0.52",
     "mongoose": "^4.3.1"
   }
