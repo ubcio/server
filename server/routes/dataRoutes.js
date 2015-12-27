@@ -43,7 +43,6 @@ router.get('/careerFairs', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }
       })
     }
@@ -75,7 +74,6 @@ router.get('/companies', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -107,7 +105,6 @@ router.get('/courses', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -138,7 +135,6 @@ router.get('/degreeRequirements', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -170,7 +166,6 @@ router.get('/hackathons', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -196,6 +191,13 @@ router.get('/jobPostings', function(req, res, next) {
       var result = []; var jsonResult;
       jobPostings.forEach(function(hackathon) {
         result.push(hackathon);
+        counter++;
+        if (counter >= jobPostings.length) {
+          var jsonResult = JSON.stringify(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
+          mongoose.connection.close();
+        }  
       })
     }
   });
@@ -225,7 +227,6 @@ router.get('/professors', function(req, res, next) {
           res.status(200).send(result);
           console.log('Closing connection to DB');
           mongoose.connection.close();
-          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -257,7 +258,6 @@ router.get('/seminars', function(req, res, next) {
         res.status(200).send(result);
         console.log('Closing connection to DB');
         mongoose.connection.close();
-        res.status(200).send("No data available in DB.");
       })  
     }
   });
@@ -288,7 +288,6 @@ router.get('/tutors', function(req, res, next) {
         res.status(200).send(result);
         console.log('Closing connection to DB');
         mongoose.connection.close();
-        res.status(200).send("No data available in DB.");
       })  
     }
   });
@@ -319,7 +318,6 @@ router.get('/courseTutors', function(req, res, next) {
         res.status(200).send(result);
         console.log('Closing connection to DB');
         mongoose.connection.close();
-        res.status(200).send("No data available in DB.");
       })  
     }
   });
