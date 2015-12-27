@@ -22,7 +22,7 @@ var mongourl = 'mongodb://localhost:27017/ubcio';
 // NEED TO COMPLETE
 router.get('/careerFairs', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   CareerFairs.find({}, function(err, fairs) {
     if (err) { 
       console.log("Error occured in getting items from DB for CareerFairs");
@@ -47,7 +47,7 @@ router.get('/careerFairs', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/companies', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Companies.find({}, function(err, companies) {
     if (err) { 
       console.log("Error occured in getting items from DB for Companies");
@@ -72,7 +72,7 @@ router.get('/companies', function(req, res, next) {
 
 router.get('/courses', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Courses.find({}, function(err, courses) {
     if (err) { 
       console.log("Error occured in getting items from DB for Courses");
@@ -96,7 +96,7 @@ router.get('/courses', function(req, res, next) {
 
 router.get('/degreeRequirements', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   DegreeRequirements.find({}, function(err, degrees) {
     if (err) { 
       console.log("Error occured in getting items from DB for DegreeRequirements");
@@ -121,7 +121,7 @@ router.get('/degreeRequirements', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/hackathons', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Hackathons.find({}, function(err, hackathons) {
     if (err) { 
       console.log("Error occured in getting items from DB for Hackathons");
@@ -146,7 +146,7 @@ router.get('/hackathons', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/jobPostings', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   JobPostings.find({}, function(err, jobPostings) {
     if (err) { 
       console.log("Error occured in getting items from DB for JobPostings");
@@ -164,7 +164,7 @@ router.get('/jobPostings', function(req, res, next) {
 
 router.get('/professors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Professors.find({}, function(err, professors) {
     if (err) { 
       console.log("Error occured in getting items from DB for Professors");
@@ -189,7 +189,7 @@ router.get('/professors', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/seminars', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Seminars.find({}, function(err, seminars) {
     if (err) { 
       console.log("Error occured in getting items from DB for Seminars");
@@ -213,7 +213,7 @@ router.get('/seminars', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/tutors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   Tutors.find({}, function(err, tutors) {
     if (err) { 
       console.log("Error occured in getting items from DB for Tutors");
@@ -237,7 +237,7 @@ router.get('/tutors', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/courseTutors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.connect(mongourl);
+  mongoose.createConnection(mongourl);
   CourseTutors.find({}, function(err, courseTutors) {
     if (err) { 
       console.log("Error occured in getting items from DB for CourseTutors");
