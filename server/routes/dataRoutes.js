@@ -22,11 +22,16 @@ var mongourl = 'mongodb://localhost:27017/ubcio';
 // NEED TO COMPLETE
 router.get('/careerFairs', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   CareerFairs.find({}, function(err, fairs) {
     if (err) { 
       console.log("Error occured in getting items from DB for CareerFairs");
       res.status(500).send(err);
+    } else if (fairs.length <= 0){
+      console.log("No Items available in CareerFairs");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -35,8 +40,10 @@ router.get('/careerFairs', function(req, res, next) {
         counter++;
         if (counter >= fairs.length) {
           var jsonResult = JSON.Stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }
       })
     }
@@ -47,11 +54,16 @@ router.get('/careerFairs', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/companies', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Companies.find({}, function(err, companies) {
     if (err) { 
       console.log("Error occured in getting items from DB for Companies");
       res.status(500).send(err);
+    } else if (companies.length <= 0){
+      console.log("No Items available in Companies");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -60,8 +72,10 @@ router.get('/companies', function(req, res, next) {
         counter++;
         if (counter >= courses.length) {
           var jsonResult = JSON.stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -72,11 +86,16 @@ router.get('/companies', function(req, res, next) {
 
 router.get('/courses', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Courses.find({}, function(err, courses) {
     if (err) { 
       console.log("Error occured in getting items from DB for Courses");
       res.status(500).send(err);
+    } else if (courses.length <= 0){
+      console.log("No Items available in Courses");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -85,8 +104,10 @@ router.get('/courses', function(req, res, next) {
         counter++;
         if (counter >= courses.length) {
           var jsonResult = JSON.stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -96,11 +117,16 @@ router.get('/courses', function(req, res, next) {
 
 router.get('/degreeRequirements', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   DegreeRequirements.find({}, function(err, degrees) {
     if (err) { 
       console.log("Error occured in getting items from DB for DegreeRequirements");
       res.status(500).send(err);
+    } else if (degrees.length <= 0){
+      console.log("No Items available in DegreeRequirements");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -109,8 +135,10 @@ router.get('/degreeRequirements', function(req, res, next) {
         counter++;
         if (counter >= degrees.length) {
           var jsonResult = JSON.stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -121,11 +149,16 @@ router.get('/degreeRequirements', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/hackathons', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Hackathons.find({}, function(err, hackathons) {
     if (err) { 
       console.log("Error occured in getting items from DB for Hackathons");
       res.status(500).send(err);
+    } else if (hackathons.length <= 0){
+      console.log("No Items available in Hackathons");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -134,8 +167,10 @@ router.get('/hackathons', function(req, res, next) {
         counter++;
         if (counter >= hackathons.length) {
           var jsonResult = JSON.stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -146,11 +181,16 @@ router.get('/hackathons', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/jobPostings', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   JobPostings.find({}, function(err, jobPostings) {
     if (err) { 
       console.log("Error occured in getting items from DB for JobPostings");
       res.status(500).send(err);
+    } else if (jobPostings.length <= 0){
+      console.log("No Items available in JobPostings");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult;
@@ -164,11 +204,16 @@ router.get('/jobPostings', function(req, res, next) {
 
 router.get('/professors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Professors.find({}, function(err, professors) {
     if (err) { 
       console.log("Error occured in getting items from DB for Professors");
       res.status(500).send(err);
+    } else if (professors.length <= 0){
+      console.log("No Items available in Professors");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = []; var jsonResult; var counter = 0;
@@ -177,8 +222,10 @@ router.get('/professors', function(req, res, next) {
         counter++;
         if (counter >= professors.length) {
           var jsonResult = JSON.stringify(result);
-          res.send(result);
+          res.status(200).send(result);
+          console.log('Closing connection to DB');
           mongoose.connection.close();
+          res.status(200).send("No data available in DB.");
         }  
       })
     }
@@ -189,11 +236,16 @@ router.get('/professors', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/seminars', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Seminars.find({}, function(err, seminars) {
     if (err) { 
       console.log("Error occured in getting items from DB for Seminars");
       res.status(500).send(err);
+    } else if (seminars.length <= 0){
+      console.log("No Items available in Seminars");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = [];
@@ -202,8 +254,10 @@ router.get('/seminars', function(req, res, next) {
         result.push(seminar);
       }).then(function(){
         var jsonResult = JSON.Stringify(result);
-        res.send(result);
+        res.status(200).send(result);
+        console.log('Closing connection to DB');
         mongoose.connection.close();
+        res.status(200).send("No data available in DB.");
       })  
     }
   });
@@ -213,11 +267,16 @@ router.get('/seminars', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/tutors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+  mongoose.connect(mongourl);
   Tutors.find({}, function(err, tutors) {
     if (err) { 
       console.log("Error occured in getting items from DB for Tutors");
       res.status(500).send(err);
+    } else if (tutors.length <= 0){
+      console.log("No Items available in Tutors");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = [];
@@ -226,8 +285,10 @@ router.get('/tutors', function(req, res, next) {
         result.push(tutor);
       }).then(function(){
         var jsonResult = JSON.Stringify(result);
-        res.send(result);
+        res.status(200).send(result);
+        console.log('Closing connection to DB');
         mongoose.connection.close();
+        res.status(200).send("No data available in DB.");
       })  
     }
   });
@@ -237,11 +298,16 @@ router.get('/tutors', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/courseTutors', function(req, res, next) {
   console.log('Request Received');
-  mongoose.createConnection(mongourl);
+
   CourseTutors.find({}, function(err, courseTutors) {
     if (err) { 
       console.log("Error occured in getting items from DB for CourseTutors");
       res.status(500).send(err);
+    } else if (courseTutors.length <= 0){
+      console.log("No Items available in CourseTutors");
+      console.log('Closing connection to DB');
+      mongoose.connection.close();
+      res.status(200).send("No data available in DB.");
     }
     else {
       var result = [];
@@ -250,8 +316,10 @@ router.get('/courseTutors', function(req, res, next) {
         result.push(courseTutor);
       }).then(function(){
         var jsonResult = JSON.Stringify(result);
-        res.send(result);
+        res.status(200).send(result);
+        console.log('Closing connection to DB');
         mongoose.connection.close();
+        res.status(200).send("No data available in DB.");
       })  
     }
   });
