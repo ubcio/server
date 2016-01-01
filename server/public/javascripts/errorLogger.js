@@ -1,27 +1,23 @@
 "use strict";
-
+module.exports = {
 var fs = require('fs');
 var twiliotokens = require('../../twiliotokens.js');
 var client = require('twilio')(twiliotokens.accountSid, twiliotokens.authToken);
 var phoneNumbers = require('../../phonenumbers.js');
 
-class ErrorLogger {
 
-    constructor() {
-    }
+function logError(error) {
+    var currentdate = new Date();
+    var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+    var errordata = datetime + " => " + error;
+    fs.appendFile('../../logs/logs.txt', errordata, function (err) {
+      if (err) throw err;
+      console.log('Error was logged to the file');
+  });
+}
 
-    logError(error) {
-        var currentdate = new Date();
-        var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-        var errordata = datetime + " => " + error;
-        fs.appendFile('../../logs/logs.txt', errordata, function (err) {
-          if (err) throw err;
-          console.log('Error was logged to the file');
-      });
-    }
-
-    sendText(err) {
-        var txtmessage = "Error occured on UBCIO Server: " + err;
+function sendText(err) {
+    var txtmessage = "Error occured on UBCIO Server: " + err;
         //Send an SMS text message
         client.sendMessage({
 
@@ -49,7 +45,4 @@ class ErrorLogger {
         });
 }
 
-
 }
-
-module.exports = ErrorLogger;
