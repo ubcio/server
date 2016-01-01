@@ -1,12 +1,12 @@
-"use strict";
-module.exports = {
+
 var fs = require('fs');
 var twiliotokens = require('../../twiliotokens.js');
 var client = require('twilio')(twiliotokens.accountSid, twiliotokens.authToken);
 var phoneNumbers = require('../../phonenumbers.js');
 
+module.exports = {
 
-function logError(error) {
+logError: function(error) {
     var currentdate = new Date();
     var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
     var errordata = datetime + " => " + error;
@@ -14,9 +14,9 @@ function logError(error) {
       if (err) throw err;
       console.log('Error was logged to the file');
   });
-}
+},
 
-function sendText(err) {
+sendText: function(err) {
     var txtmessage = "Error occured on UBCIO Server: " + err;
         //Send an SMS text message
         client.sendMessage({
@@ -44,12 +44,4 @@ function sendText(err) {
             }
         });
 }
-
-<<<<<<< HEAD
-
 }
-
-module.exports = ErrorLogger;
-=======
-}
->>>>>>> ae91a0820d2bf090d713267ecca4823b541da27a
