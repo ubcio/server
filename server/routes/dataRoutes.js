@@ -14,6 +14,8 @@ var JobPostings = require('../models/jobPostings.js');
 var Professors = require('../models/professors.js');
 var Seminars = require('../models/seminars.js');
 var Tutors = require('../models/tutors.js');
+var ErrorLogger = require('../public/javascripts/errorLogger.js');
+
 
 // DB URL
 var mongourl = 'mongodb://localhost:27017/ubcio';
@@ -25,7 +27,10 @@ router.get('/careerFairs', function(req, res, next) {
   mongoose.connect(mongourl);
   CareerFairs.find({}, function(err, fairs) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for CareerFairs");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (fairs.length <= 0){
       console.log("No Items available in CareerFairs");
@@ -56,7 +61,11 @@ router.get('/companies', function(req, res, next) {
   mongoose.connect(mongourl);
   Companies.find({}, function(err, companies) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Companies");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (companies.length <= 0){
       console.log("No Items available in Companies");
@@ -87,7 +96,10 @@ router.get('/courses', function(req, res, next) {
   mongoose.connect(mongourl);
   Courses.find({}, function(err, courses) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Courses");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (courses.length <= 0){
       console.log("No Items available in Courses");
@@ -117,7 +129,10 @@ router.get('/degreeRequirements', function(req, res, next) {
   mongoose.connect(mongourl);
   DegreeRequirements.find({}, function(err, degrees) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for DegreeRequirements");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (degrees.length <= 0){
       console.log("No Items available in DegreeRequirements");
@@ -148,7 +163,10 @@ router.get('/hackathons', function(req, res, next) {
   mongoose.connect(mongourl);
   Hackathons.find({}, function(err, hackathons) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Hackathons");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (hackathons.length <= 0){
       console.log("No Items available in Hackathons");
@@ -179,7 +197,10 @@ router.get('/jobPostings', function(req, res, next) {
   mongoose.connect(mongourl);
   JobPostings.find({}, function(err, jobPostings) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for JobPostings");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (jobPostings.length <= 0){
       console.log("No Items available in JobPostings");
@@ -209,7 +230,10 @@ router.get('/professors', function(req, res, next) {
   mongoose.connect(mongourl);
   Professors.find({}, function(err, professors) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Professors");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (professors.length <= 0){
       console.log("No Items available in Professors");
@@ -240,7 +264,10 @@ router.get('/seminars', function(req, res, next) {
   mongoose.connect(mongourl);
   Seminars.find({}, function(err, seminars) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Seminars");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (seminars.length <= 0){
       console.log("No Items available in Seminars");
@@ -270,7 +297,10 @@ router.get('/tutors', function(req, res, next) {
   mongoose.connect(mongourl);
   Tutors.find({}, function(err, tutors) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for Tutors");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (tutors.length <= 0){
       console.log("No Items available in Tutors");
@@ -300,7 +330,10 @@ router.get('/courseTutors', function(req, res, next) {
 
   CourseTutors.find({}, function(err, courseTutors) {
     if (err) { 
+      var ErrLog = new ErrorLogger();
       console.log("Error occured in getting items from DB for CourseTutors");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
       res.status(500).send(err);
     } else if (courseTutors.length <= 0){
       console.log("No Items available in CourseTutors");
