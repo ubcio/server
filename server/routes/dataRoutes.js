@@ -14,6 +14,7 @@ var JobPostings = require('../models/jobPostings.js');
 var Professors = require('../models/professors.js');
 var Seminars = require('../models/seminars.js');
 var Tutors = require('../models/tutors.js');
+var PendingProfReview = require('../models/pendingProfReview.js');
 var ErrorLogger = require('../public/javascripts/errorLogger.js');
 
 
@@ -32,6 +33,7 @@ router.get('/careerFairs', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (fairs.length <= 0){
       console.log("No Items available in CareerFairs");
       console.log('Closing connection to DB');
@@ -67,6 +69,7 @@ router.get('/companies', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (companies.length <= 0){
       console.log("No Items available in Companies");
       console.log('Closing connection to DB');
@@ -101,6 +104,7 @@ router.get('/courses', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (courses.length <= 0){
       console.log("No Items available in Courses");
       console.log('Closing connection to DB');
@@ -134,6 +138,7 @@ router.get('/degreeRequirements', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (degrees.length <= 0){
       console.log("No Items available in DegreeRequirements");
       console.log('Closing connection to DB');
@@ -168,6 +173,7 @@ router.get('/hackathons', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (hackathons.length <= 0){
       console.log("No Items available in Hackathons");
       console.log('Closing connection to DB');
@@ -202,6 +208,7 @@ router.get('/jobPostings', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (jobPostings.length <= 0){
       console.log("No Items available in JobPostings");
       console.log('Closing connection to DB');
@@ -235,6 +242,7 @@ router.get('/professors', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (professors.length <= 0){
       console.log("No Items available in Professors");
       console.log('Closing connection to DB');
@@ -269,6 +277,7 @@ router.get('/seminars', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (seminars.length <= 0){
       console.log("No Items available in Seminars");
       console.log('Closing connection to DB');
@@ -302,6 +311,7 @@ router.get('/tutors', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (tutors.length <= 0){
       console.log("No Items available in Tutors");
       console.log('Closing connection to DB');
@@ -327,7 +337,7 @@ router.get('/tutors', function(req, res, next) {
 // NEED TO COMPLETE
 router.get('/courseTutors', function(req, res, next) {
   console.log('Request Received');
-
+  mongoose.connect(mongourl);
   CourseTutors.find({}, function(err, courseTutors) {
     if (err) { 
       var ErrLog = new ErrorLogger();
@@ -335,6 +345,7 @@ router.get('/courseTutors', function(req, res, next) {
       ErrLog.logError(err);
       ErrLog.sendText(err);
       res.status(500).send(err);
+      mongoose.connection.close();
     } else if (courseTutors.length <= 0){
       console.log("No Items available in CourseTutors");
       console.log('Closing connection to DB');
@@ -356,5 +367,31 @@ router.get('/courseTutors', function(req, res, next) {
   });
 
 });
+
+router.post('/', function(req, res) {
+  res.send('Create a customer');
+})
+
+router.post('/professorReview', function(req, res) {
+  console.log('Request Received');
+  console.log('profReviewData is :'+ req.body.data);
+  mongoose.connect(mongourl);
+  var review = new PendingProfReview(req.body.data);
+  review.save(function (err) {
+    if (err) {
+      var ErrLog = new ErrorLogger();
+      console.log("Error occured in insertion of PendingProfReview. Check logs");
+      ErrLog.logError(err);
+      ErrLog.sendText(err);
+      res.status(500).send(err);
+      mongoose.connection.close();
+    } else {
+      console.log("Error occured in insertion of PendingProfReview. Check logs");
+      res.status(200).send("Data input into DB");
+      mongoose.connection.close();
+    }
+  })
+
+})
 
 module.exports = router;
