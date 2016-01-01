@@ -29,7 +29,7 @@ router.get('/careerFairs', function(req, res, next) {
   mongoose.connect(mongourl);
   CareerFairs.find({}, function(err, fairs) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for CareerFairs");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -64,8 +64,8 @@ router.get('/companies', function(req, res, next) {
   mongoose.connect(mongourl);
   Companies.find({}, function(err, companies) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
-      var ErrLog = new ErrorLogger();
+
+
       console.log("Error occured in getting items from DB for Companies");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -100,7 +100,7 @@ router.get('/courses', function(req, res, next) {
   mongoose.connect(mongourl);
   Courses.find({}, function(err, courses) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for Courses");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -134,7 +134,7 @@ router.get('/degreeRequirements', function(req, res, next) {
   mongoose.connect(mongourl);
   DegreeRequirements.find({}, function(err, degrees) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for DegreeRequirements");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -169,7 +169,7 @@ router.get('/hackathons', function(req, res, next) {
   mongoose.connect(mongourl);
   Hackathons.find({}, function(err, hackathons) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for Hackathons");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -204,7 +204,7 @@ router.get('/jobPostings', function(req, res, next) {
   mongoose.connect(mongourl);
   JobPostings.find({}, function(err, jobPostings) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for JobPostings");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -238,7 +238,7 @@ router.get('/professors', function(req, res, next) {
   mongoose.connect(mongourl);
   Professors.find({}, function(err, professors) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for Professors");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -273,7 +273,7 @@ router.get('/seminars', function(req, res, next) {
   mongoose.connect(mongourl);
   Seminars.find({}, function(err, seminars) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for Seminars");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -307,7 +307,7 @@ router.get('/tutors', function(req, res, next) {
   mongoose.connect(mongourl);
   Tutors.find({}, function(err, tutors) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for Tutors");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -341,7 +341,7 @@ router.get('/courseTutors', function(req, res, next) {
   mongoose.connect(mongourl);
   CourseTutors.find({}, function(err, courseTutors) {
     if (err) { 
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in getting items from DB for CourseTutors");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -380,7 +380,7 @@ router.post('/professorReview', function(req, res) {
   var review = new PendingProfReview(req.body.data);
   review.save(function (err) {
     if (err) {
-      var ErrLog = new ErrorLogger();
+
       console.log("Error occured in insertion of PendingProfReview. Check logs");
       ErrLog.logError(err);
       ErrLog.sendText(err);
