@@ -387,7 +387,7 @@ router.post('/professorReview', function(req, res) {
       res.status(500).send(err);
       mongoose.connection.close();
     } else {
-      console.log("Error occured in insertion of PendingProfReview. Check logs");
+      console.log("Data Input into DB");
       res.status(200).send("Data input into DB");
       mongoose.connection.close();
     }
