@@ -1,5 +1,5 @@
 "use strict";
-
+require("babel-register");
 var fs = require('fs');
 var twiliotokens = require('../../twiliotokens.js');
 var client = require('twilio')(twiliotokens.accountSid, twiliotokens.authToken);
