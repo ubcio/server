@@ -375,9 +375,9 @@ router.post('/', function(req, res) {
 
 router.post('/professorReview', function(req, res) {
   console.log('Request Received');
-  console.log('profReviewData is :'+ req.body.data);
+  console.log('profReviewData is :'+ JSON.stringify(req.body));
   mongoose.connect(mongourl);
-  var review = new PendingProfReview(req.body.data);
+  var review = new PendingProfReview(req.body);
   review.save(function (err) {
     if (err) {
 
