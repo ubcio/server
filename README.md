@@ -63,15 +63,3 @@ Status # | Meaning
 418 | Im a teapot
 5** | Server Error
 500 | Internal Server Error
-
-
-router.get('/careerFairs'
-router.get('/companies'
-router.get('/courses'
-router.get('/degreeRequirements'
-router.get('/hackathons'
-router.get('/jobPostings'
-router.get('/professors'
-router.get('/seminars'
-router.get('/tutors'
-router.get('/courseTutors'
