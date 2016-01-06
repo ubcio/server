@@ -5,5 +5,5 @@ var DegreeRequirementsImportScript = require('./importDegreeRequirements.js');
 
 
 // var imported = new CoursesImportScript();
-// var imported2 = new ProfessorsImportScript();
-var imported3 = new DegreeRequirementsImportScript();
+var imported2 = new ProfessorsImportScript();
+// var imported3 = new DegreeRequirementsImportScript();
