@@ -16,7 +16,7 @@ var Professors = require('../models/professors.js');
 var Seminars = require('../models/seminars.js');
 var Tutors = require('../models/tutors.js');
 var PendingProfReview = require('../models/pendingProfReview.js');
-var ErrorLogger = require('../public/javascripts/errorLogger.js');
+var ErrLog = require('../public/javascripts/errorLogger.js');
 
 
 // DB URL
@@ -100,7 +100,6 @@ router.get('/courses', function(req, res, next) {
   mongoose.connect(mongourl);
   Courses.find({}, function(err, courses) {
     if (err) { 
-
       console.log("Error occured in getting items from DB for Courses");
       ErrLog.logError(err);
       ErrLog.sendText(err);
@@ -273,7 +272,6 @@ router.get('/seminars', function(req, res, next) {
   mongoose.connect(mongourl);
   Seminars.find({}, function(err, seminars) {
     if (err) { 
-
       console.log("Error occured in getting items from DB for Seminars");
       ErrLog.logError(err);
       ErrLog.sendText(err);

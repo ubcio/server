@@ -3,21 +3,24 @@ var fs = require('fs');
 var twiliotokens = require('../../twiliotokens.js');
 var client = require('twilio')(twiliotokens.accountSid, twiliotokens.authToken);
 var phoneNumbers = require('../../phonenumbers.js');
+var path = require('path');
+var appDir = path.dirname(require.main.filename);
 
 module.exports = {
 
 logError: function(error) {
+    var logdir = process.cwd() + '/logs/logs.txt';
     var currentdate = new Date();
     var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
     var errordata = datetime + " => " + error;
-    fs.appendFile('../../logs/logs.txt', errordata, function (err) {
+    fs.appendFile(logdir, errordata, function (err) {
       if (err) throw err;
       console.log('Error was logged to the file');
   });
 },
 
 sendText: function(err) {
-    var txtmessage = "Error occured on UBCIO Server: " + err;
+    var txtmessage = "Error occured on UBCIO Server: " + err + ". Please resolve";
         //Send an SMS text message
         client.sendMessage({
 
@@ -33,15 +36,15 @@ sendText: function(err) {
                 console.log(responseData.from); // outputs "+14506667788"
                 console.log(responseData.body); // outputs "word to your mother."
 
-            } else {
-                var currentdate = new Date();
-                var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-                var errordata = datetime + " => " + err;
-                fs.appendFile('../../logs/logs.txt', errordata, function (err) {
-                  if (err) throw err;
-                  console.log('Error was logged to the file');
-              });
             }
+        });
+        var logdir = process.cwd() + '/logs/logs.txt';
+        var currentdate = new Date();
+        var datetime = "Time: " + currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        var errordata = datetime + " => " + err +"\n";
+        fs.appendFile(logdir, errordata, function (err) {
+            if (err) throw err;
+            console.log('Error was logged to the file');
         });
 }
 }
