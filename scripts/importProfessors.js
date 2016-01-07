@@ -55,11 +55,12 @@ class ProfessorsImportScript extends ImportScript {
         if (item["courses"]){
           var courses = item["courses"];
           var subCourse;
+          var courseList = []
           for (var property in courses) {
-            var courseList = []
             var courseItem = {courseName: property, reviewsIndex: courses[property]}
             console.log(property + ": " + courses[property]);
             courseList.push(courseItem);
+            console.log(courseList);
           }
           professorJson.courses = courseList
         }
