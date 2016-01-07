@@ -52,13 +52,15 @@ class DegreeRequirementsImportScript extends ImportScript {
         var degreeJson = {name: item["name"]};
         var sites = item["websites"];
         if (sites){
-          for (var j = 0; j < sites.length; j++){
+          var sitesArray = [];
+	  for (var j = 0; j < sites.length; j++){
             var site = sites[j];
             console.log('Button name: '+ site["buttonName"]);
             console.log('Website: '+ site["website"]);
             var websitesJson = {buttonName: site["buttonName"], website: site["website"]}
+	    sitesArray.push(websitesJson);
           }
-          degreeJson.websites = websitesJson
+          degreeJson.websites = sitesArray
         }
         resultarray.push(degreeJson)
         console.log('XXXXXXXXXXXXXXXXXXXXX');
