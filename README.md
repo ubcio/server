@@ -35,17 +35,27 @@ Default URL that goes before every path is: TODO
 
 Path | HTTP Method| Input Data | Output Data | Status Success | Status Error
 -----|------------|------------|-------------|----------------|-------------
-/signup | POST | {email: String , password: String} | {user: JSON , token: String} | {201} | {400 , 500}
-/careerFairs | GET | N/A | {date: String, description: String, link: String, location: String, name: String} | {200} | {500}
-/companies | GET | N/A | {name: String, reviews: [{review: String, createDate: String}]} | {200} | {500}
-/courses | GET | N/A | {name: String, description: String, credits: String, prerequisites: String, corequisite: String, tips: [{tip: String, createDate: String}], reviews: [{review: String, createDate: String, professor: String}]} | {200} | {500}
-/degreeRequirements | GET | N/A | {name: String, websites: [{buttonName: String, website: String}]} | {200} | {500}
-/hackathons | GET | N/A | {date: String, description: String, link: String, location: String, name: String} | {200} | {500}
-/jobPostings | GET | N/A | {title: String, company: String, location: String, deadline: String, term: String, link: String} | {200} | {500}
-/professors | GET | N/A | {name: String, reviews: [{review: String, createDate: String, course: String}], courses: {courseName: String, reviewsIndex: [Number]}} | {200} | {500}
-/seminars | GET | N/A | {date: String, description: String,  link: String, location: String, name: String} | {200} | {500}
-/tutors | GET | N/A | {name: String, bio: String,  email: String, price: Number, reviews: [{review: String, createDate: String}]} | {200} | {500}
-/courseTutors | GET | N/A | {name: String, tutors: [Number]} | {200} | {500} 
+/data/signup | POST | {email: String , password: String} | {user: JSON , token: String} | {201} | {400 , 500}
+/data/careerFairs | GET | N/A | {date: String, description: String, link: String, location: String, name: String} | {200} | {500}
+/data/companies | GET | N/A | {name: String, reviews: [{review: String, createDate: String}]} | {200} | {500}
+/data/courses | GET | N/A | {name: String, description: String, credits: String, prerequisites: String, corequisite: String, tips: [{tip: String, createDate: String}], reviews: [{review: String, createDate: String, professor: String}]} | {200} | {500}
+/data/degreeRequirements | GET | N/A | {name: String, websites: [{buttonName: String, website: String}]} | {200} | {500}
+/data/hackathons | GET | N/A | {date: String, description: String, link: String, location: String, name: String} | {200} | {500}
+/data/jobPostings | GET | N/A | {title: String, company: String, location: String, deadline: String, term: String, link: String} | {200} | {500}
+/data/professors | GET | N/A | {name: String, reviews: [{review: String, createDate: String, course: String}], courses: {courseName: String, reviewsIndex: [Number]}} | {200} | {500}
+/data/seminars | GET | N/A | {date: String, description: String,  link: String, location: String, name: String} | {200} | {500}
+/data/tutors | GET | N/A | {name: String, bio: String,  email: String, price: Number, reviews: [{review: String, createDate: String}]} | {200} | {500}
+/data/courseTutors | GET | N/A | {name: String, tutors: [Number]} | {200} | {500} 
+/pendingData/pendingCareerFair | POST | {link: String, name: String, time: String, location: String, description: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingCompanyReview | POST | {company: String, review: String,email: String} | N/A | {200} | {500} 
+/pendingData/pendingCourseReview | POST | {course: String,tip: String,email: String} | N/A | {200} | {500} 
+/pendingData/pendingCourseTip | POST | {course: String, tip: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingHackathon | POST | {link: String, name: String, time: String, location: String, description: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingJobPosting | POST | {link: String, title: String, company: String, location: String, deadline: String, term: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingProfReview | POST | {name: String, course: String, review: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingSeminar | POST | {link: String, name: String, time: String, location: String, description: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingSuggestion | POST | {suggestion: String, email: String} | N/A | {200} | {500} 
+/pendingData/pendingTutorService | POST | {name: String, email: String, hourlyPrice: Number courses: String, bio: String} | N/A | {200} | {500} 
 
 Quick reminder of HTTP status codes below: 
 
